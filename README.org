@@ -1,0 +1,37 @@
+* Chess Peace
+Searches random positions until a solution is found containing 16 pieces that 
+don't threaten each other.
+
+** Requirements
+Requires python to be installed. On a Mac, that should be the case, on 
+Windows, you can find Python [here](http://python.org/download/).
+
+** How To Run
+With Python installed, `cd` into the directory containing this distribution's
+`peace.py`. 
+
+Then enter: 
+#+begin_src sh
+  
+  ./peace.py
+  
+#+end_src
+
+** What Else Can I Do With This?
+The heart of peace.py is a representation of chess board and pieces.
+
+*** Board
+The Board keeps an array of 64 (at first) empty fields. 
+Supplying a board's `place` function with a Piece-derived instance, and an 
+integer position between [0, 64[ ensures that this move doesn't
+1. place the piece on a field already occupied by another piece, and
+2. place the piece where it would threaten another piece, or be threatened 
+   by it.
+If those conditions are met, the piece is placed on the specified position,
+otherwise an exception is thrown. 
+
+*** Pieces
+Each piece is logically derived from Piece and defines it's own .name, and a 
+`move` function that, given a position, returns a list of *theoretical* 
+threatened positions, whereas the `threatened` function defined in Piece
+provides some otherwise repetetive sanity checking. 
