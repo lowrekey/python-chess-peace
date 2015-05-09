@@ -3,8 +3,7 @@ Searches random positions until a solution is found containing 16 pieces that
 don't threaten each other.
 
 ** Requirements
-Requires python to be installed. On a Mac, that should be the case, on 
-Windows, you can find Python [here](http://python.org/download/).
+This works on MacOS and Windows as long as python is installed. You can find Python [here](http://python.org/download/).
 
 ** How To Run
 With Python installed, `cd` into the directory containing this distribution's
